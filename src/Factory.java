@@ -10,6 +10,9 @@ public class Factory {
     public Pumpkin pumpkin1;
     public Pumpkin pumpkin2;
     public Pumpkin pumpkin3;
+    public int randomSize;
+
+    public Squash  squash1;
 
     public static void main(String[] args) {
     Factory a = new Factory();
@@ -24,28 +27,24 @@ public class Factory {
     System.out.println("it is " + isOpen + " that the factory is open");
     System.out.println("the owner is " + owner);
 
-    pumpkin1 = new Pumpkin();
+    pumpkin1 = new Pumpkin(20,true, "blue");
     System.out.println("The pumpkin is " + pumpkin1.colour);
         System.out.println("The pumpkin has a radius " + pumpkin1.size + " feet");
         System.out.println("it is " + pumpkin1.isJackOLantern + " that the pumpkin is a jackolantern");
 
-        pumpkin2 = new Pumpkin ();
+        randomSize = (int)(Math.random() * 30); //range 0-29
+        pumpkin2 = new Pumpkin (randomSize, false, "Green");
         pumpkin2.colour = "red";
-        pumpkin2.size = 50;
         pumpkin2.isJackOLantern = true;
         System.out.println("The pumpkin is " + pumpkin2.colour);
         System.out.println("The pumpkin weighs " + pumpkin2.size + " kilograms");
         System.out.println("it is " + pumpkin2.isJackOLantern + " that the pumpkin is a jackolantern");
 
-        pumpkin3 = new Pumpkin();
-        pumpkin3.colour = "brown";
-        pumpkin3.size = pumpkin2.size + pumpkin1.size;
-        pumpkin3.isJackOLantern = false;
-        System.out.println("The pumpkin is " + pumpkin3.colour);
-        System.out.println("This pumpkin has a radius of " + pumpkin3.size + " feet");
-        System.out.println("it is " + pumpkin3.isJackOLantern + " that the pumpkin is a jackolantern");
+        pumpkin3 = new Pumpkin(80, true, "purple");
+        pumpkin3.printInfo();
 
-
+        squash1 = new Squash (true, "green", 1000);
+        squash1.printInfo();
 
     }
 
